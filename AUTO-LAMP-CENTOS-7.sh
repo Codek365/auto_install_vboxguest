@@ -65,28 +65,29 @@ echo -ne '#######################   (100%)\r'
 echo -ne '\n'
 
 
-echo '
-<FilesMatch \.php$>	        
-	SetHandler application/x-httpd-php	
-</FilesMatch>' >> /etc/httpd/conf/httpd.conf
-echo 'IncludeOptional conf.d/vhost.conf' >> /etc/httpd/conf/httpd.conf
+if [ ! -d /etc/httpd/conf.d/vhost.conf ]; then
+	echo '
+	<FilesMatch \.php$>	        
+		SetHandler application/x-httpd-php	
+	</FilesMatch>' >> /etc/httpd/conf/httpd.conf
+	echo 'IncludeOptional conf.d/vhost.conf' >> /etc/httpd/conf/httpd.conf
 
-touch /etc/httpd/conf.d/vhost.conf
+	touch /etc/httpd/conf.d/vhost.conf
 
-echo '
-<VirtualHost *:80>
-	    ServerName localhost
-	    DocumentRoot /var/www/html/public/
-</VirtualHost>
-<Directory "/var/www/html/public/>
-	DirectoryIndex index.html index.php
-	AllowOverride All
-</Directory>' >> /etc/httpd/conf.d/vhost.conf
- 
-sudo service httpd restart
-echo "Done!"
-sleep 1
-
+	echo '
+	<VirtualHost *:80>
+		    ServerName localhost
+		    DocumentRoot /var/www/html/public/
+	</VirtualHost>
+	<Directory "/var/www/html/public/>
+		DirectoryIndex index.html index.php
+		AllowOverride All
+	</Directory>' >> /etc/httpd/conf.d/vhost.conf
+	 
+	sudo service httpd restart
+	echo "Done!"
+	sleep 1
+fi
 
 echo "Install Composer"
 echo -ne '#####                     (33%)\r'
