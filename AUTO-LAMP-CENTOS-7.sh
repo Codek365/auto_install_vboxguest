@@ -56,13 +56,13 @@
 # sudo systemctl enable mariadb.service
 
 
-# echo "Start Config Apache"
-# echo -ne '#####                     (33%)\r'
-# sleep 1
-# echo -ne '#############             (66%)\r'
-# sleep 1
-# echo -ne '#######################   (100%)\r'
-# echo -ne '\n'
+echo "Start Config Apache"
+echo -ne '#####                     (33%)\r'
+sleep 1
+echo -ne '#############             (66%)\r'
+sleep 1
+echo -ne '#######################   (100%)\r'
+echo -ne '\n'
 
 
 echo "<FilesMatch \.php$>	        SetHandler application/x-httpd-php	</FilesMatch>" >> /etc/httpd/conf/httpd.conf
@@ -75,6 +75,10 @@ echo '<VirtualHost *:80>
 	    DirectoryIndex index.html index.php
 	    AllowOverride All
 	</Directory>' >> /etc/httpd/conf/httpd.conf
+
+
+echo "Done!"
+sleep 1
 
 
 echo "Install Composer"
