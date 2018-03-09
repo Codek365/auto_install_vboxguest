@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo mkdir -d /var/www
-sudo mkdir -d /var/www/html
+sudo mkdir -p -Z /var/www
+sudo mkdir -p -Z /var/www/html
 sudo mount -t vboxsf -o uid=1000,gid=1000 WWW-SHARE /var/www/html
 sudo su
 echo "mount -t vboxsf -o uid=1000,gid=1000 WWW-SHARE /var/www/html" >> /etc/rc.local 
