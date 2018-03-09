@@ -69,6 +69,7 @@ echo '
 <FilesMatch \.php$>	        
 	SetHandler application/x-httpd-php	
 </FilesMatch>' >> /etc/httpd/conf/httpd.conf
+echo 'IncludeOptional conf.d/vhost.conf' >> /etc/httpd/conf/httpd.conf
 
 touch /etc/httpd/conf.d/vhost.conf
 
