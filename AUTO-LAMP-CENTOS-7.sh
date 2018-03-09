@@ -8,10 +8,18 @@ sleep 1
 echo -ne '#######################   (100%)\r'
 echo -ne '\n'
 
-sudo mkdir -p -Z /var/www
-sudo mkdir -p -Z /var/www/html
+
+
+if [ ! -d /var/www ]; then
+    sudo mkdir  /var/www
+	sudo mkdir /var/www/html
+fi
+
+
+
+
 sudo mount -t vboxsf -o uid=1000,gid=1000 WWW-SHARE /var/www/html
-sudo su
+
 echo "mount -t vboxsf -o uid=1000,gid=1000 WWW-SHARE /var/www/html" >> /etc/rc.local 
 sudo chmod +x /etc/rc.d/rc.local
 
