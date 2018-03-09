@@ -2,13 +2,13 @@
 
 if [ ! -d   /var/www ]
 then
-	sudo mkdir -p /var/www
+	sudo mkdir /var/www
 fi
 
 
 if [ ! -d   /var/www/html ]
 then
-	sudo mkdir -f /var/www/html
+	sudo mkdir /var/www/html
 
 fi
 
