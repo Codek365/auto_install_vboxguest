@@ -65,17 +65,22 @@ echo -ne '#######################   (100%)\r'
 echo -ne '\n'
 
 
-echo "<FilesMatch \.php$>	        SetHandler application/x-httpd-php	</FilesMatch>" >> /etc/httpd/conf/httpd.conf
+echo '
+<FilesMatch \.php$>	        
+	SetHandler application/x-httpd-php	
+</FilesMatch>' > /etc/httpd/conf/httpd.conf
+
 touch /etc/httpd/conf.d/vhost.conf
-echo '<VirtualHost *:80>
+
+echo '
+<VirtualHost *:80>
 	    ServerName localhost
 	    DocumentRoot /var/www/html/public/
-	</VirtualHost>
-	<Directory "/var/www/html/public/>
-	    DirectoryIndex index.html index.php
-	    AllowOverride All
-	</Directory>' >> /etc/httpd/conf/httpd.conf
-
+</VirtualHost>
+<Directory "/var/www/html/public/>
+	DirectoryIndex index.html index.php
+	AllowOverride All
+</Directory>' > /etc/httpd/conf.d/vhost.conf
 
 echo "Done!"
 sleep 1
