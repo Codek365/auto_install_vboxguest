@@ -16,8 +16,6 @@ if [ ! -d /var/www ]; then
 fi
 
 
-
-
 sudo mount -t vboxsf -o uid=1000,gid=1000 WWW-SHARE /var/www/html
 
 echo "mount -t vboxsf -o uid=1000,gid=1000 WWW-SHARE /var/www/html" >> /etc/rc.local 
@@ -67,10 +65,18 @@ echo -ne '#######################   (100%)\r'
 echo -ne '\n'
 
 
-#sudo vi /etc/httpd/conf/httpd.conf
-touch /etc/httpd/conf/httpd.conf
- echo "<FilesMatch \.php$>	        SetHandler application/x-httpd-php	</FilesMatch>" >> /etc/httpd/conf/httpd.conf
+touch /etc/httpd/conf.d/vhost.conf
+echo "<FilesMatch \.php$>	        SetHandler application/x-httpd-php	</FilesMatch>" >> /etc/httpd/conf/httpd.conf
+cp vhost //etc/httpd/conf.d/
 
+
+echo "Install Composer"
+echo -ne '#####                     (33%)\r'
+sleep 1
+echo -ne '#############             (66%)\r'
+sleep 1
+echo -ne '#######################   (100%)\r'
+echo -ne '\n'
 sudo yum -y update 
 cd /tmp 
 sudo curl -sS https://getcomposer.org/installer | php 
