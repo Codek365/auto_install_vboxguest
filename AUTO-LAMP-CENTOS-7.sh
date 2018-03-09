@@ -81,7 +81,8 @@ echo '
 	DirectoryIndex index.html index.php
 	AllowOverride All
 </Directory>' > /etc/httpd/conf.d/vhost.conf
-
+ 
+sudo service httpd restart
 echo "Done!"
 sleep 1
 
