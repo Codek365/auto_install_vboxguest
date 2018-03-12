@@ -33,7 +33,6 @@ sudo yum -y clean all
 sudo rm -rf /var/cache/yum
 sudo yum -y update
 
-sudo yum -y install centos-release-scl.noarch && \
 sudo yum -y install yum-utils && sudo yum-config-manager --enable remi-php71 && \
 sudo yum -y install php71w php71w-mcrypt php71w-cli php71w-gd php71w-curl php71w-mysql php71w-ldap php71w-zip php71w-fileinfo
 
