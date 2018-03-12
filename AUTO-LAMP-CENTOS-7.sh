@@ -105,8 +105,8 @@ echo -ne '\n'
 sudo yum -y update 
 sudo yum -y install wget
 cd /tmp && \
-wget https://getcomposer.org/composer.phar && \
-chmod +x composer.phar && \
+wget https://getcomposer.org/composer.phar
+chmod +x composer.phar
 mv composer.phar /usr/local/bin/composer
-
+sudo chmod +x /usr/local/bin/composer
 # echo "Start Config"
