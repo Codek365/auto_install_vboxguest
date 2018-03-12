@@ -36,7 +36,8 @@ sudo yum -y update
 
 sudo yum -y install yum-utils && sudo yum-config-manager --enable remi-php71 
 
-sudo yum -y install php mod_php71w php71w-opcache
+sudo yum -y install php php-opcache
+
 
 #sudo yum -y install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo php-mbstring php-dom 
 sudo firewall-cmd --permanent --add-port=80/tcp
