@@ -19,7 +19,7 @@ sudo yum -y install httpd
 
 
 
-echo "Start Install Apache"
+echo "Start Install PHP"
 echo -ne '#####                     (33%)\r'
 sleep 1
 echo -ne '#############             (66%)\r'
