@@ -34,7 +34,7 @@ sudo rm -rf /var/cache/yum
 sudo yum -y update
 
 sudo yum -y install yum-utils && sudo yum-config-manager --enable remi-php71 && \
-sudo yum -y install php71w php71w-mcrypt php71w-cli php71w-gd php71w-curl php71w-mysql php71w-ldap php71w-zip php71w-fileinfo
+sudo yum -y install php71w php71w-mcrypt php71w-cli php71w-gd php71w-curl php71w-mysql php71w-ldap php71w-zip php71w-fileinfo php71w-mbstring php71w-xml
 
 
 
@@ -92,8 +92,7 @@ echo -ne '\n'
 sudo yum -y update 
 sudo yum -y install wget
 cd /tmp && \
-wget https://getcomposer.org/composer.phar
-chmod +x composer.phar
-mv composer.phar /usr/local/bin/composer
-sudo chmod +x /usr/local/bin/composer
+sudo wget https://getcomposer.org/composer.phar && \
+sudo mv composer.phar /usr/bin/composer && \
+sudo chmod +x /usr/bin/composer
 # echo "Start Config"
