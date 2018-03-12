@@ -1,27 +1,4 @@
 #!/bin/bash
-echo "Start Mount VMs Folder"
-
-echo -ne '#####                     (33%)\r'
-sleep 1
-echo -ne '#############             (66%)\r'
-sleep 1
-echo -ne '#######################   (100%)\r'
-echo -ne '\n'
-
-
-
-if [ ! -d /var/www ]; then
-    sudo mkdir  /var/www
-	sudo mkdir /var/www/html
-fi
-
-
-sudo mount -t vboxsf -o uid=1000,gid=1000 WWW-SHARE /var/www/html
-
-echo "mount -t vboxsf -o uid=1000,gid=1000 WWW-SHARE /var/www/html" >> /etc/rc.local 
-sudo chmod +x /etc/rc.d/rc.local
-
-
 
 echo "Start Install Mysql & Httpd"
 echo -ne '#####                     (33%)\r'
@@ -33,6 +10,7 @@ echo -ne '\n'
 
 sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 sudo rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+sudo yum -y update
 sudo yum -y install mariadb-server mariadb && 
 #sudo mysql_secure_installation
 sudo systemctl start mariadb.service 
