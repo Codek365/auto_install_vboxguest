@@ -2,10 +2,10 @@
 - Right click on VM -> setting -> share folder -> click new -> done!
 -  you should remember the name of share folder, i usualy named it "WWW-SHARE"
 
-# 2. Start VM and Insert Guest Addition CDs:
+## 2. Start VM and Insert Guest Addition CDs:
 - On menu -> device -> Insert Guest Addition CDs
 
-# 3. login to VM change to root user:
+## 3. login to VM change to root user:
 - type command:
 $ mount /dev/cdrom /mnt
 $ cd /mnt
@@ -13,7 +13,7 @@ $ yum -y install kernel-devel-$(uname -r) kernel-core-$(uname -r) gcc dkms make 
 $ ./VBoxLinuxAdditions.run
 $ reboot
 
-# 4. Now we mount the VM Share Folder (Folder on Windows) with VM Folder (on Linux)
+## 4. Now we mount the VM Share Folder (Folder on Windows) with VM Folder (on Linux)
 - run command:
 $ sudo mount -t vboxsf -o uid=1000,gid=1000 WWW-SHARE /var/www/html
 $ sudo su
@@ -25,7 +25,7 @@ $ sudo chmod +x /etc/rc.d/rc.local
  - run command: $ man mount 
  - understand more about mount command
 
-# 5. Install LAMP of LEMP
+## 5. Install LAMP of LEMP
 - Install Mariadb: 
 $ sudo yum -y install mariadb-server mariadb && \
 sudo mysql_secure_installation && \
@@ -66,7 +66,7 @@ $ sudo yum -y update && \
  mv composer.phar /usr/local/bin/composer 
 
 
-# 6. Setup apache:
+## 6. Setup apache:
 -  Enable permision for public access from IP
 $ sudo setenforce 0
 
