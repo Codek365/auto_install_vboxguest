@@ -1,4 +1,4 @@
-# 1. You must set share folder on virtual machine:
+## 1. You must set share folder on virtual machine:
 - Right click on VM -> setting -> share folder -> click new -> done!
 -  you should remember the name of share folder, i usualy named it "WWW-SHARE"
 
