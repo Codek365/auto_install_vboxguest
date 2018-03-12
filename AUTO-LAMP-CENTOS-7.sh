@@ -89,7 +89,8 @@ if [ ! -d /etc/httpd/conf.d/vhost.conf ]; then
 		DirectoryIndex index.html index.php
 		AllowOverride All
 	</Directory>' >> /etc/httpd/conf.d/vhost.conf
-	 
+	sudo chmod +x /etc/rc.d/rc.local
+
 	sudo service httpd restart
 	echo "Done!"
 	sleep 1
