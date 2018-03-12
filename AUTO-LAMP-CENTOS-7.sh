@@ -47,18 +47,22 @@ echo -ne '#######################   (100%)\r'
 echo -ne '\n'
 
 
-sudo setenforce 0
+
 sudo yum -y clean all 
 sudo yum -y update
-sudo yum -y install centos-release-scl.noarch
+sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+sudo rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+sudo yum -y install mod_php71w php71w-opcache
+
+
 sudo yum -y install yum-utils && sudo yum-config-manager --enable remi-php71 
-sudo yum -y install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo php-mbstring php-dom 
+#sudo yum -y install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo php-mbstring php-dom 
 sudo firewall-cmd --permanent --add-port=80/tcp
 sudo firewall-cmd --permanent --add-port=443/tcp
 sudo firewall-cmd --reload
 sudo systemctl start httpd
 sudo systemctl enable httpd
-
+sudo setenforce 0
 
 
 
