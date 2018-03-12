@@ -33,13 +33,13 @@ sudo yum -y clean all
 sudo rm -rf /var/cache/yum
 sudo yum -y update
 
+sudo yum -y install centos-release-scl.noarch && \
+sudo yum -y install yum-utils && sudo yum-config-manager --enable remi-php71 && \
+sudo yum -y install php71w php71w-mcrypt php71w-cli php71w-gd php71w-curl php71w-mysql php71w-ldap php71w-zip php71w-fileinfo
 
-sudo yum -y install yum-utils && sudo yum-config-manager --enable remi-php71 
-
-sudo yum -y install php php-opcache
 
 
-#sudo yum -y install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo php-mbstring php-dom 
+
 sudo firewall-cmd --permanent --add-port=80/tcp
 sudo firewall-cmd --permanent --add-port=443/tcp
 sudo firewall-cmd --reload
