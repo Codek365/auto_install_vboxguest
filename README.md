@@ -46,13 +46,13 @@ sudo sh AUTO-LAMP-CENTOS-7.sh
 ####4. Now we mount the VM Share Folder (Folder on Windows) with VM Folder (on Linux)
 - run command:
 ```bash
-sudo mkdir /var/www
-sudo mkdir /var/www/html
-sudo mount -t vboxsf -o uid=1000,gid=1000 WWW-SHARE /var/www/html
-sudo su
-echo "mount -t vboxsf -o uid=1000,gid=1000 WWW-SHARE /var/www/html" >> /etc/rc.local
- sudo chmod +x /etc/rc.d/rc.local
- sudo reboot
+	sudo mkdir /var/www
+	sudo mkdir /var/www/html
+	sudo mount -t vboxsf -o uid=1000,gid=1000 WWW-SHARE /var/www/html
+	sudo su
+	echo "mount -t vboxsf -o uid=1000,gid=1000 WWW-SHARE /var/www/html" >> /etc/rc.local
+ 	sudo chmod +x /etc/rc.d/rc.local
+ 	sudo reboot
 ```
  - ***WWW-SHARE*** -> VM Share Folder (Folder on Windows)
  - ***/var/www/html*** -> VM Folder (on Linux)
@@ -94,9 +94,8 @@ sudo setenforce 0
 $ sudo vi /etc/httpd/conf/httpd.conf
 
 - add first line:
-
 	```bash
-<FilesMatch \.php$>
+	<FilesMatch \.php$>
 	        SetHandler application/x-httpd-php
 	</FilesMatch>
 ```
@@ -123,7 +122,7 @@ sudo vi /etc/conf.d/vhost.conf
 - add:
 
 	```bash
-<VirtualHost *:80>
+	<VirtualHost *:80>
 	    ServerName localhost
 	    DocumentRoot /var/www/html/public/
 	</VirtualHost>
