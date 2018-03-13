@@ -30,8 +30,10 @@ After server reboot, access to server again:
 
 ```bash
 cd auto_install_vboxguest
-    sudo sh AUTO-LAMP-CENTOS-7.sh
+sudo sh AUTO-LAMP-CENTOS-7.sh
 ```
+
+#### Setup ENV MANUAL
 
 #### 1. You must set share folder on virtual machine:
 
