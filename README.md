@@ -58,38 +58,37 @@ sudo sh AUTO-LAMP-CENTOS-7.sh
  - ***/var/www/html*** -> VM Folder (on Linux)
  - run command: ` man mount`
 
-
  - Read more about mount command
-
 
 ####5. Install LAMP of LEMP
 - Install Mariadb & Httpd:
 ```bash
-sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-sudo rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
-sudo yum -y update
-sudo yum -y install mariadb-server mariadb && 
-#sudo mysql_secure_installation
-sudo systemctl start mariadb.service 
-sudo systemctl enable mariadb.service
-sudo yum -y install httpd
+	sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+	sudo rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+	sudo yum -y update
+	sudo yum -y install mariadb-server mariadb && 
+	sudo systemctl start mariadb.service 
+	sudo systemctl enable mariadb.service
+	sudo yum -y install httpd
 ```
-
+- If you want to custom mariadb:
+```bash
+	sudo mysql_secure_installation
+```
 - Install php 7:
 ```bash
-sudo yum -y clean all
-sudo rm -rf /var/cache/yum
-sudo yum -y update
-sudo yum -y install yum-utils && sudo yum-config-manager --enable remi-php71
-sudo yum -y install php71w php71w-mcrypt php71w-cli php71w-gd php71w-curl php71w-mysql php71w-ldap php71w-zip php71w-fileinfo php71w-mbstring php71w-xml
-sudo firewall-cmd --permanent --add-port=80/tcp
-sudo firewall-cmd --permanent --add-port=443/tcp
-sudo firewall-cmd --reload
-sudo systemctl start httpd
-sudo systemctl enable httpd
-sudo setenforce 0
+	sudo yum -y clean all
+	sudo rm -rf /var/cache/yum
+	sudo yum -y update
+	sudo yum -y install yum-utils && sudo yum-config-manager --enable remi-php71
+	sudo yum -y install php71w php71w-mcrypt php71w-cli php71w-gd php71w-curl php71w-mysql php71w-ldap php71w-zip php71w-fileinfo php71w-mbstring php71w-xml
+	sudo firewall-cmd --permanent --add-port=80/tcp
+	sudo firewall-cmd --permanent --add-port=443/tcp
+	sudo firewall-cmd --reload
+	sudo systemctl start httpd
+	sudo systemctl enable httpd
+	sudo setenforce 0
 ```
-
 
 $ sudo vi /etc/httpd/conf/httpd.conf
 
@@ -100,24 +99,19 @@ $ sudo vi /etc/httpd/conf/httpd.conf
 	</FilesMatch>
 ```
 
-
-
 - save end exit
-
-
-
 
 #### 6. Setup apache:
 -  Enable permision for public access from IP
  ```bash
-sudo setenforce 0
-sudo vi /etc/conf/httpd.conf
+	sudo setenforce 0
+	sudo vi /etc/conf/httpd.conf
 ```
 
 - search: IncludeOptional conf.d/*.conf 
 - change to: IncludeOptional conf.d/vhost.conf
 ```bash
-sudo vi /etc/conf.d/vhost.conf
+	sudo vi /etc/conf.d/vhost.conf
 ```
 - add:
 
@@ -133,8 +127,8 @@ sudo vi /etc/conf.d/vhost.conf
 ```
 - Install Composer:
 ```bash
-sudo yum -y update
- cd /tmp
- sudo curl -sS https://getcomposer.org/installer | php
- mv composer.phar /usr/local/bin/composer
+	sudo yum -y update
+	cd /tmp
+	sudo curl -sS https://getcomposer.org/installer | php
+	mv composer.phar /usr/local/bin/composer
 ```
