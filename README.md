@@ -18,19 +18,19 @@
 #### Setup ENV AUTO:
 Access to server (CentOS):
 	```bash
-git clone https://bitbucket.org/ibs_khoa_nguyen/auto_install_vboxguest.git
-cd auto_install_vboxguest
-sudo sh auto_install.sh
+	git clone https://bitbucket.org/ibs_khoa_nguyen/auto_install_vboxguest.git
+	cd auto_install_vboxguest
+	sudo sh auto_install.sh
 ```
 After server reboot, access to server again:
 	```bash
-cd auto_install_vboxguest
-sudo sh AUTO-LAMP-CENTOS-7.sh
+	cd auto_install_vboxguest
+	sudo sh AUTO-LAMP-CENTOS-7.sh
 ```
 
 #### 1. You must set share folder on virtual machine:
 - Right click on VM -> setting -> share folder -> click new -> done!
--  you should remember the name of share folder, i usualy named it "WWW-SHARE"
+- you should remember the name of share folder, i usualy named it "WWW-SHARE"
 
 #### 2. Start VM and Insert Guest Addition CDs:
 - On menu -> device -> Insert Guest Addition CDs or Right click on VM -> setting -> stograte -> controller IDE -> choose image VBoxGuestAdditions.iso
@@ -38,12 +38,14 @@ sudo sh AUTO-LAMP-CENTOS-7.sh
 #### 3. login to VM change to root user:
 - type command:
 	```bash
- mount /dev/cdrom /mnt
- cd /mnt
- yum -y install kernel-devel-$(uname -r) kernel-core-$(uname -r) gcc dkms make bzip2 perl
- ./VBoxLinuxAdditions.run
+ 	mount /dev/cdrom /mnt
+ 	cd /mnt
+ 	yum -y install kernel-devel-$(uname -r) kernel-core-$(uname -r) gcc dkms make bzip2 perl
+ 	./VBoxLinuxAdditions.run
 ```
-#### 4. Now we mount the VM Share Folder (Folder on Windows) with VM Folder (on Linux)
+
+#### 4. Now we mount the VM Share Folder (Folder on Windows) with VM Folder (on Linux):
+
 - run command:
 	```bash
 	sudo mkdir /var/www
