@@ -18,6 +18,24 @@
 
 #### Setup ENV AUTO
 
+###### Before setup, please check my screenshot:
+
+https://bitbucket.org/ibs_khoa_nguyen/auto_install_vboxguest/src/20de6529de51e13b2bac551480653db76d289fb5/step-01.png?at=master
+
+https://bitbucket.org/ibs_khoa_nguyen/auto_install_vboxguest/src/20de6529de51e13b2bac551480653db76d289fb5/step-01.png?at=master
+
+https://bitbucket.org/ibs_khoa_nguyen/auto_install_vboxguest/src/20de6529de51e13b2bac551480653db76d289fb5/step-03.png?at=master
+
+https://bitbucket.org/ibs_khoa_nguyen/auto_install_vboxguest/src/20de6529de51e13b2bac551480653db76d289fb5/step-03-2.png?at=master
+
+https://bitbucket.org/ibs_khoa_nguyen/auto_install_vboxguest/src/20de6529de51e13b2bac551480653db76d289fb5/step-03-3.png?at=master
+
+https://bitbucket.org/ibs_khoa_nguyen/auto_install_vboxguest/src/20de6529de51e13b2bac551480653db76d289fb5/step-04.png?at=master
+
+https://bitbucket.org/ibs_khoa_nguyen/auto_install_vboxguest/src/20de6529de51e13b2bac551480653db76d289fb5/step-04-2.png?at=master
+
+
+
 Access to server (CentOS):
 
 ```bash

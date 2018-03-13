@@ -71,7 +71,7 @@ if [ ! -d /etc/httpd/conf.d/vhost.conf ]; then
 		    ServerName localhost
 		    DocumentRoot /var/www/html/public/
 	</VirtualHost>
-	<Directory "/var/www/html/public/>
+	<Directory "/var/www/html/public/">
 		DirectoryIndex index.html index.php
 		AllowOverride All
 	</Directory>' >> /etc/httpd/conf.d/vhost.conf
@@ -81,6 +81,7 @@ if [ ! -d /etc/httpd/conf.d/vhost.conf ]; then
 	echo "Done!"
 	sleep 1
 fi
+sudo setenforce 0
 
 echo "Install Composer"
 echo -ne '#####                     (33%)\r'
